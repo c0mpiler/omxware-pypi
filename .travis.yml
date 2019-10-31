@@ -28,3 +28,13 @@ script: tox
 #    tags: true
 #    repo: hvkrishn/omxware-pypi
 #    python: 3.6
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  local_dir: docs
+  repo: c0mpiler/omxware-pypi-docs
+  on:
+    branch: master
